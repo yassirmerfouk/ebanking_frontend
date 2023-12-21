@@ -1,0 +1,31 @@
+<div class="card mt-4">
+  <div class="card-header">
+    Accounts
+  </div>
+  <div class="card-body">
+    <table class="table" *ngIf="accounts">
+      <thead>
+      <tr>
+        <th>#Id</th>
+        <th>CreatedAt</th>
+        <th>Balance</th>
+        <th>Status</th>
+        <th>Type</th>
+        <th></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let account of accounts">
+        <th>{{account.id}}</th>
+        <td>{{account.createdAt | date : 'd/M/yyyy'}}</td>
+        <td class="text-end">{{account.balance}}</td>
+        <td>{{account.status}}</td>
+        <td>{{account.type}}</td>
+        <td>
+          <button (click)="getAccountOperations(account.id)" type="button" class="btn btn-secondary btn-sm ms-2"><i class="bi bi-eye"></i></button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

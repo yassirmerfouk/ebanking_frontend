@@ -1,0 +1,27 @@
+<div class="d-flex justify-content-center">
+  <div class="card mt-4 col-6">
+    <div class="card-header">
+      Add New Customer
+    </div>
+    <div class="card-body">
+     <form [formGroup]="formGroup" (ngSubmit)="addCustomer()">
+       <div class="mb-3">
+         <label class="form-label">First Name</label>
+         <input formControlName="firstName" type="text" class="form-control">
+       </div>
+       <div class="mb-3">
+         <label class="form-label">Last Name</label>
+         <input formControlName="lastName" type="text" class="form-control">
+       </div>
+       <div class="mb-3">
+         <label class="form-label">Email</label>
+         <input formControlName="email" type="email" class="form-control">
+       </div>
+       <div class="d-grid gap-2">
+         <button [disabled]="formGroup.invalid" type="submit" class="btn btn-success btn-sm">Add Customer</button>
+       </div>
+     </form>
+    </div>
+  </div>
+
+</div>
