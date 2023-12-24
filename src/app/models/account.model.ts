@@ -8,3 +8,17 @@ export interface Account{
   type : string,
   customer : Customer
 }
+
+export interface CurrentAccountRequest{
+  balance : number,
+  status : string,
+  overDraft : number,
+  customerId : number
+}
+
+export interface SavingAccountRequest{
+  balance : number,
+  status : string,
+  interestRate : number,
+  customerId : number
+}

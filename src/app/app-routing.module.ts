@@ -4,6 +4,7 @@ import {CustomersComponent} from "./customers/customers.component";
 import {AccountsComponent} from "./accounts/accounts.component";
 import {AddCustomerComponent} from "./add-customer/add-customer.component";
 import {OperationsComponent} from "./operations/operations.component";
+import {AddAccountComponent} from "./add-account/add-account.component";
 
 const routes: Routes = [
   {path : "customers", component : CustomersComponent},
@@ -11,7 +12,8 @@ const routes: Routes = [
   {path : "add-customer", component : AddCustomerComponent},
   {path : "customer-accounts/:customerId", component : AccountsComponent},
   {path : "operations", component : OperationsComponent},
-  {path : "operations/:accountId", component : OperationsComponent}
+  {path : "operations/:accountId", component : OperationsComponent},
+  {path : "add-account", component : AddAccountComponent}
 ];
 
 @NgModule({

@@ -35,7 +35,6 @@ export class OperationsComponent implements OnInit {
         accountId: this.formBuilder.control(null)
       }
     );
-    if (this.accountId) {
       this.operationFormGroup = this.formBuilder.group(
         {
           option: this.formBuilder.control(null, [Validators.required]),
@@ -43,7 +42,6 @@ export class OperationsComponent implements OnInit {
           amount: this.formBuilder.control(null, [Validators.required]),
         }
       );
-    }
   }
 
   public getPageOperations(): void {
