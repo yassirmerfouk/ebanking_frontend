@@ -10,26 +10,28 @@
           <a class="nav-link active" aria-current="page" href="#">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/customers">Customers</a>
+          <a class="nav-link" routerLink="/admin/customers">Customers</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/accounts">Accounts</a>
+          <a class="nav-link" routerLink="/admin/accounts">Accounts</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/operations">Operations</a>
+          <a class="nav-link" routerLink="/admin/operations">Operations</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             More actions
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" routerLink="/add-customer">Add customer</a></li>
-            <li><a class="dropdown-item" routerLink="/add-account">Add account</a></li>
+            <li><a *ngIf="authStateService.hasRole('ADMIN')" class="dropdown-item" routerLink="/admin/add-customer">Add customer</a></li>
+            <li><a *ngIf="authStateService.hasRole('ADMIN')" class="dropdown-item" routerLink="/admin/add-account">Add account</a></li>
           </ul>
         </li>
       </ul>
-      <form class="d-flex">
-      </form>
+      <div *ngIf="authStateService.authState.authenticated" class="d-flex" style="color: white;">
+        [{{authStateService.authState.username}}] -
+        <a (click)="logout()">Logout</a>
+      </div>
     </div>
   </div>
 </nav>

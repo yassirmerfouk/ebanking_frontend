@@ -3,6 +3,7 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {AccountService} from "../services/account.service";
 import {PageOperation} from "../models/page-operation.model";
 import {ActivatedRoute} from "@angular/router";
+import {AuthStateService} from "../services/states/auth-state.service";
 
 @Component({
   selector: 'app-operations',
@@ -21,7 +22,8 @@ export class OperationsComponent implements OnInit {
   constructor(
     private accountService: AccountService,
     private formBuilder: FormBuilder,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    public authStateService : AuthStateService
   ) {
   }
 

@@ -1,0 +1,23 @@
+<div class="d-flex flex-row justify-content-center">
+  <div class="card mt-4 col-9">
+    <div class="card-header">
+      Accounts
+    </div>
+    <div class="card-body">
+      <form [formGroup]="loginForm" (ngSubmit)="login()">
+        <div class="mb-3">
+          <label class="form-label">username</label>
+          <input type="text" formControlName="username" class="form-control">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Password</label>
+          <input type="password" formControlName="password" class="form-control">
+        </div>
+        <div class="d-grid gap-2">
+          <button [disabled]="loginForm.invalid" type="submit" class="btn btn-success btn-sm">Login</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</div>

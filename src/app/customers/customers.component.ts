@@ -3,6 +3,7 @@ import {CustomerService} from "../services/customer.service";
 import {Customer} from "../models/customer.model";
 import {FormBuilder, FormGroup} from "@angular/forms";
 import {Router} from "@angular/router";
+import {AuthStateService} from "../services/states/auth-state.service";
 
 @Component({
   selector: 'app-customers',
@@ -17,7 +18,8 @@ export class CustomersComponent implements OnInit{
   constructor(
     private customerService : CustomerService,
     private formBuilder : FormBuilder,
-    private router : Router
+    private router : Router,
+    public authStateService : AuthStateService
   ) {
   }
   ngOnInit() {
@@ -63,11 +65,11 @@ export class CustomersComponent implements OnInit{
   }
 
   public toAddCustomer() : void{
-    this.router.navigateByUrl("/add-customer");
+    this.router.navigateByUrl("/admin/add-customer");
   }
 
   public toCustomerAccounts(customerId : number){
-    this.router.navigateByUrl("/customer-accounts/" + customerId);
+    this.router.navigateByUrl("/admin/customer-accounts/" + customerId);
   }
 
 }

@@ -37,14 +37,13 @@
           <nav>
             <ul class="pagination">
               <li [ngClass]="pageOperations.page == i ? 'page-item active' : 'page-item'"
-                  *ngFor="let item of [].constructor(pageOperations.totalPages), let i = index"><a class="page-link"
-                                                                                                   (click)="toPage(i)">{{i + 1}}</a>
+                  *ngFor="let item of [].constructor(pageOperations.totalPages), let i = index"><a class="page-link" (click)="toPage(i)">{{i + 1}}</a>
               </li>
             </ul>
           </nav>
         </table>
       </div>
-      <div class="col-6 mt-3">
+      <div *ngIf="authStateService.hasRole('ADMIN')" class="col-6 mt-3">
         <form [formGroup]="operationFormGroup">
           <div class="d-flex flex-row">
             <div class="form-check">

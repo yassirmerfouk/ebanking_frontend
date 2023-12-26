@@ -30,7 +30,7 @@
         <td>{{customer.email}}</td>
         <td class="d-flex flex-row">
           <button (click)="toCustomerAccounts(customer.id)" type="button" class="btn btn-secondary btn-sm"><i class="bi bi-eye"></i></button>
-          <button (click)="deleteCustomer(customer)" type="button" class="btn btn-danger btn-sm ms-2"><i class="bi bi-trash"></i></button>
+          <button *ngIf="authStateService.hasRole('ADMIN')" (click)="deleteCustomer(customer)" type="button" class="btn btn-danger btn-sm ms-2"><i class="bi bi-trash"></i></button>
         </td>
       </tr>
       </tbody>

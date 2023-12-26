@@ -52,7 +52,7 @@ export class AddAccountComponent implements OnInit{
         {
           next: (data) => {
             alert("account add with success");
-            this.router.navigateByUrl("/customer-accounts/" + currentAccount.customerId);
+            this.router.navigateByUrl("/admin/customer-accounts/" + currentAccount.customerId);
           },
           error : (error) => {console.log(error)}
         }
@@ -63,7 +63,7 @@ export class AddAccountComponent implements OnInit{
         {
           next : (data) => {
             alert("account add with success");
-            this.router.navigateByUrl("/customer-accounts/" + savingAccount.customerId);
+            this.router.navigateByUrl("/admin/customer-accounts/" + savingAccount.customerId);
           },
           error : (error) => {console.log(error)}
         }

@@ -55,6 +55,6 @@ export class AccountsComponent implements OnInit{
   }
 
   getAccountOperations(accountId: number) {
-    this.router.navigateByUrl("/operations/"+accountId);
+    this.router.navigateByUrl("/admin/operations/"+accountId);
   }
 }

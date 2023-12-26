@@ -6,11 +6,14 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { CustomersComponent } from './customers/customers.component';
 import { AccountsComponent } from './accounts/accounts.component';
-import {HttpClientModule} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {ReactiveFormsModule} from "@angular/forms";
 import { AddCustomerComponent } from './add-customer/add-customer.component';
 import { OperationsComponent } from './operations/operations.component';
 import { AddAccountComponent } from './add-account/add-account.component';
+import { LoginComponent } from './login/login.component';
+import { AdminComponent } from './admin/admin.component';
+import {AppHttpInterceptor} from "./interceptors/app-http.interceptor";
 
 @NgModule({
   declarations: [
@@ -20,7 +23,9 @@ import { AddAccountComponent } from './add-account/add-account.component';
     AccountsComponent,
     AddCustomerComponent,
     OperationsComponent,
-    AddAccountComponent
+    AddAccountComponent,
+    LoginComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +33,9 @@ import { AddAccountComponent } from './add-account/add-account.component';
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    {provide : HTTP_INTERCEPTORS, useClass : AppHttpInterceptor, multi: true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
